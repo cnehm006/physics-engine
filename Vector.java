@@ -29,4 +29,17 @@ public class Vector {
         this.y /= scalar;
         return this;
     }
+
+    public double dot(Vector other) {
+        return this.x * other.x + this.y * other.y;
+    }
+
+    public Vector normalize() {
+        double magnitude = Math.sqrt(this.x * this.x + this.y * this.y);
+        if (magnitude > 0) {
+            this.x /= magnitude;
+            this.y /= magnitude;
+        }
+        return this;
+    }
 }

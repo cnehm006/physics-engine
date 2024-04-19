@@ -11,9 +11,9 @@ public class Environment {
 
     public Environment(double width, double height) {
         this.particles = new ArrayList<>();
-        this.gravity = new Vector(0, 9.81);  // Default gravity points downwards
-        this.damping = 0.1;  // Default damping
-        this.elasticity = 0.7;  // Default elasticity
+        this.gravity = new Vector(0, 9.81);
+        this.damping = 0.1;
+        this.elasticity = 0.7;
         this.width = width;
         this.height = height;
     }
@@ -32,7 +32,6 @@ public class Environment {
 
     public void update() {
         for (Particle particle : particles) {
-            // Apply gravity force
             particle.applyForce(new Vector(0, gravity.y * particle.mass));
             particle.update();
             checkBounds(particle);

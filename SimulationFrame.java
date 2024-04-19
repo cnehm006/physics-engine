@@ -10,7 +10,7 @@ public class SimulationFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        environment = new Environment(800, 600);  // Assuming width and height
+        environment = new Environment(800, 600);
         panel = new EnvironmentPanel(environment);
         panel.setPreferredSize(new Dimension(800, 600));
         add(panel, BorderLayout.CENTER);
@@ -26,7 +26,7 @@ public class SimulationFrame extends JFrame {
     }
 
     private void setupControls(JPanel panel) {
-        panel.setLayout(new GridLayout(4, 2, 5, 5)); // Layout for labels and text fields
+        panel.setLayout(new GridLayout(4, 2, 5, 5));
 
         // Gravity control
         JLabel gravityLabel = new JLabel("Gravity:");
@@ -46,7 +46,6 @@ public class SimulationFrame extends JFrame {
         panel.add(elasticityLabel);
         panel.add(elasticityField);
 
-        // Apply button to update values
         JButton applyButton = new JButton("Apply Changes");
         applyButton.addActionListener(e -> {
             double gravity = Double.parseDouble(gravityField.getText());
@@ -56,7 +55,7 @@ public class SimulationFrame extends JFrame {
             environment.setDamping(damping);
             environment.setElasticity(elasticity);
         });
-        panel.add(new JLabel()); // Placeholder to align button in the grid
+        panel.add(new JLabel());
         panel.add(applyButton);
     }
 
