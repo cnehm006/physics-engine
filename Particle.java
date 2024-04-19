@@ -23,4 +23,12 @@ public class Particle {
         Vector f = force.divide(mass);
         acceleration.add(f);
     }
+
+    public boolean collidesWith(Particle other) {
+        double dx = this.position.x - other.position.x;
+        double dy = this.position.y - other.position.y;
+        double distance = Math.sqrt(dx * dx + dy * dy);
+        return distance <= (this.radius + other.radius);
+    }
+
 }
