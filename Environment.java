@@ -70,7 +70,7 @@ public class Environment {
 
     private boolean areColliding(Particle p1, Particle p2) {
         double dx = p1.position.x - p2.position.x;
-        double dy = p1.position.y - p2.position.y;
+        double dy = p1. position.y - p2.position.y;
         double distance = Math.sqrt(dx * dx + dy * dy);
         return distance <= (p1.radius + p2.radius);
     }
